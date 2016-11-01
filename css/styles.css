@@ -1,0 +1,118 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: helvetica;
+    background-color: #d2d2d2;
+}
+
+.menu-container .menu-wrapper {
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 0px 3px 20px 0px rgb(160, 160, 160);
+}
+
+.menu-container .menu-wrapper .menu-item {
+    display: flex;
+    flex: 1 10%;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-container .menu-wrapper .menu-item .menu-item-dropdown {
+    position: absolute;
+    top: 54px;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.menu-container .menu-wrapper .menu-item:last-child .menu-item-dropdown {
+    left: initial;
+    right: 0;
+}
+
+.menu-item-dropdown .dropdown {
+    min-width: 400px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 6px 20px 0px rgb(160, 160, 160);
+}
+
+.menu-item-dropdown .dropdown .dropdown-item {
+    width: 50%;
+}
+
+.menu-item-dropdown .dropdown .dropdown-item.video-element {
+    background-repeat: no-repeat;
+    padding: 10px 10px;
+    text-align: center;
+    background-position: center center;
+    position: relative;
+    width: 100%;
+}
+
+.menu-item-dropdown .dropdown .dropdown-item.video-element::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.2);;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    bottom: 0;
+    transition: all 0.2s ease;
+}
+
+.menu-item-dropdown .dropdown .dropdown-item.video-element:hover::after {
+    opacity: 1;
+}
+
+.menu-item-dropdown .dropdown .dropdown-item.video-element:hover .play-button {
+    color: #fff;
+}
+
+.menu-item-dropdown .dropdown .dropdown-item.video-element .play-button {
+    font-size: 70px;
+    transition: all 0.3s ease;
+    color: #b7aeae;
+}
+
+.menu-item-dropdown .dropdown .dropdown-item.business-component {
+    background-image: url('../images/ES_img2.png');
+}
+
+.menu-container .menu-wrapper .menu-item.active {
+    border-bottom: 2px solid red;
+    font-weight: bold;
+}
+
+.menu-container .menu-wrapper .menu-item .menu-item-name:hover .icon {
+    color: #059075;
+    transform: scale(1.2, 1.2);
+}
+
+.menu-container .menu-wrapper .menu-item .menu-item-name:hover + .menu-item-dropdown, .menu-container .menu-wrapper .menu-item .menu-item-dropdown:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-container .menu-item-name {
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-container .menu-wrapper .menu-item .icon {
+    color: #1abc9c;
+    font-size: 23px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
